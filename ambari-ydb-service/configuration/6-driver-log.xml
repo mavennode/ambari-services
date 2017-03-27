@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>content</name>
+    <value>log4j.rootLogger=INFO, YA100
+
+log4j.appender.YA100=org.apache.log4j.RollingFileAppender
+log4j.appender.YA100.File=${YA100_DRIVER_LOG}/ya100.log
+log4j.appender.YA100.MaxFileSize=1024MB
+log4j.appender.YA100.MaxBackupIndex=10
+log4j.appender.YA100.layout=org.apache.log4j.PatternLayout
+log4j.appender.YA100.layout.ConversionPattern=%d{yyy-MM-dd HH:mm:ss} %c{2} %L [%p] %m%n
+</value>
+  </property>
+</configuration>

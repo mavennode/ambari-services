@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+
+
+  
+    <property>
+    <name>hive.metastore.warehouse.dir</name>
+    <value>/user/hive/warehouse</value>
+    <description>location of default database for the warehouse</description>
+  </property>
+  
+  
+  
+  <property>
+    <name>hive.mapred.supports.subdirectories</name>
+    <value>true</value>
+  </property>
+  
+
+   <property>
+    <name>hive.server2.thrift.min.worker.threads</name>
+    <value>0</value>
+  </property>
+  
+  <property>
+    <name>hive.server2.thrift.max.worker.threads</name>
+    <value>1024</value>
+  </property>
+  
+  <property>
+    <name>hive.server2.async.exec.threads</name>
+    <value>100</value>
+  </property>
+  
+ 
+  
+</configuration>

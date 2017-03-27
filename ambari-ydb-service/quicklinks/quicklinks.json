@@ -1,0 +1,45 @@
+{
+  "name": "default",
+  "description": "Quick Links for YDB services",
+  "configuration": {
+    "protocol": {
+      "type": "https",
+      "checks": [
+        {
+          "property": "ssl.enabled",
+          "desired": "true",
+          "site": "cdap-site"
+        }
+      ]
+    },
+    "links": [
+      {
+        "name": "ydb_ui",
+        "label": "YDB UI",
+        "requires_user_name": "false",
+        "url": "%@://%@:%@",
+        "port": {
+          "http_property": "dashboard.server.address",
+          "http_default_port": "1210",
+          "https_property": "dashboard.ssl.server.address",
+          "https_default_port": "1210",
+          "site": "cdap-site"
+        }
+      }
+	  ,
+	  {
+        "name": "ydb_on_spark",
+        "label": "YDB_SPARK_UI",
+        "requires_user_name": "false",
+        "url": "%@://%@:%@",
+        "port": {
+          "http_property": "dashboard.server.address",
+          "http_default_port": "10523",
+          "https_property": "dashboard.ssl.server.address",
+          "https_default_port": "10523",
+          "site": "cdap-site"
+        }
+      }
+    ]
+  }
+}

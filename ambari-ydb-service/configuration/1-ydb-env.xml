@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+  <property>
+    <name>content</name>
+    <value>#!/usr/bin/env bash
+
+export HADOOP_CONF_DIR={{b4_hadoop_conf}}
+export HADOOP_HOME={{b5_hadoop_home}}
+export JAVA_HOME={{b2_java_home}}
+export SPARK_HOME={{b1_spark_home}}
+
+export YA100_EXECUTORS={{a1_executor_count}}
+export YA100_MEMORY={{a2_executor_mem}}
+export YA100_CORES={{a3_executor_cores}}
+export YA100_DRIVER_MEMORY={{a4_driver_memory}}
+
+
+export HDFS_USER={{b3_hdfs_user}}
+export YA100_HOME="$(cd "`dirname "$0"`"/..; pwd)"
+
+
+export SPARK_YARN_APP_NAME="ya100 on spark"
+
+export YDB_DRIVER_PORT={{a7_driver_port}} #default hive.server2.thrift.port 10000
+export YDB_DRIVER_PORT_LIST="{{a8_ydbui_port}},${YDB_DRIVER_PORT}"
+
+export YA100_WAREHOUSE_DIR={{c1_hive_warehouse}} #default hive.metastore.warehouse.dir /user/hive/warehouse
+export HIVE_METASTORE_PATH={{c3_metastore}} #default ${YA100_HOME}/bin
+
+
+export SPARK_CONF_DIR=${YA100_HOME}/conf
+export SPARK_LOG_DIR=${YA100_HOME}/logs
+export SPARK_PID_DIR=${YA100_HOME}/pid
+
+    </value>
+  </property>
+</configuration>

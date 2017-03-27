@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<metainfo>
+	 <schemaVersion>2.0</schemaVersion>
+	 <services>
+		 <service>
+			<name>YDB</name>
+			<displayName>YDB</displayName>
+			<comment>A trillion data Adhoc System</comment>
+			<version>1.1.3</version>
+			<components>
+				<component>
+					<name>YDB_MASTER</name>
+					<displayName>YDB Server</displayName>
+					<category>MASTER</category>
+					<cardinality>1</cardinality>
+
+					<commandScript>
+						<script>scripts/ydb_master.py</script>
+						<scriptType>PYTHON</scriptType>
+						<timeout>5000</timeout>
+					</commandScript>
+				</component>
+			</components>
+
+			<osSpecifics>
+				<osSpecific>
+					<osFamily>any</osFamily>
+				</osSpecific>
+			</osSpecifics>
+
+<configuration-dependencies>
+   <config-type>0-ydb-public</config-type> 
+   <config-type>1-ydb-env</config-type> 
+   <config-type>2-ydb-site</config-type>
+   <config-type>3-spark-defaults</config-type>
+   <config-type>4-hive-site</config-type>
+   <config-type>5-worker-log</config-type>
+   <config-type>6-driver-log</config-type>
+</configuration-dependencies>
+<restartRequiredAfterChange>true</restartRequiredAfterChange>
+ <quickLinksConfigurations-dir>quicklinks</quickLinksConfigurations-dir>
+ <quickLinksConfigurations>
+        <quickLinksConfiguration>
+          <fileName>quicklinks.json</fileName>
+          <default>true</default>
+        </quickLinksConfiguration>
+      </quickLinksConfigurations>
+		 </service>
+	 </services>
+</metainfo>

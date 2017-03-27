@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+   <property>
+    <name>ydb_user</name>
+    <value>root</value>
+    <description>User who will run the ydb</description>
+  </property>
+  <property>
+   <name>ydb_group</name>
+   <value>root</value>
+   <description>ydb group</description>
+ </property>
+  <property>
+    <name>ydb_log_dir</name>
+    <value>/opt/ya100/logs</value>
+    <description>Log directory for elastic</description>
+  </property>
+  <property>
+    <name>ydb_pid_dir</name>
+    <value>/opt/ya100/pid</value>
+    <description>This is location of pid file for ydb</description>
+  </property>
+  <property>
+    <name>content</name>
+    <value>#!/usr/bin/env bash
+
+export HADOOP_CONF_DIR=/etc/hadoop/conf
+export HADOOP_HOME=/usr/crh/current/hadoop-client
+export JAVA_HOME=/usr/jdk64/jdk1.8.0_60
+export SPARK_HOME=/usr/crh/current/spark-client
+
+export YA100_EXECUTORS=1
+export YA100_MEMORY=2000m
+export YA100_CORES=1
+
+export YA100_DRIVER_MEMORY=2000m
+
+
+export HDFS_USER=${USER}
+export YA100_HOME="$(cd "`dirname "$0"`"/..; pwd)"
+
+
+export SPARK_YARN_APP_NAME="ya100 on spark"
+
+export YDB_DRIVER_PORT=10005 #default hive.server2.thrift.port 10000
+export YDB_DRIVER_PORT_LIST="1210,${YDB_DRIVER_PORT}"
+
+export YA100_WAREHOUSE_DIR=/user/hive/warehouse #default hive.metastore.warehouse.dir /user/hive/warehouse
+export HIVE_METASTORE_PATH=${YA100_HOME}/bin #default ${YA100_HOME}/bin
+
+
+export SPARK_CONF_DIR=${YA100_HOME}/conf
+export SPARK_LOG_DIR=${YA100_HOME}/logs
+export SPARK_PID_DIR=${YA100_HOME}/pid
+    </value>
+  </property>
+</configuration>

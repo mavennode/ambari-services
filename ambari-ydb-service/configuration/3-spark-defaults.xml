@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>content</name>
+    <value>#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Default system properties included when running spark-submit.
+# This is useful for setting default environmental settings.
+
+# Example:
+# spark.master                     spark://master:7077
+# spark.eventLog.enabled           true
+# spark.eventLog.dir               hdfs://namenode:8021/directory
+# spark.driver.memory              5g
+# spark.executor.extraJavaOptions  -XX:+PrintGCDetails -Dkey=value -Dnumbers="one two three"
+# spark.local.dir
+#spark.files.userClassPathFirst
+
+ spark.ui.port {{a9_sparkui_port}}
+ 
+ spark.shuffle.io.preferDirectBufs false
+ 
+ spark.yarn.max.executor.failures 10000000
+
+
+ spark.scheduler.mode FAIR
+ spark.hadoop.cloneConf true
+ spark.serializer                 org.apache.spark.serializer.KryoSerializer
+ spark.storage.memoryFraction 0.12
+ spark.storage.safetyFraction 0.7
+ spark.shuffle.memoryFraction 0.04
+ spark.shuffle.safetyFraction 0.5
+ spark.broadcast.blockSize 1m
+ spark.files.useFetchCache false
+ spark.storage.memoryMapThreshold 512k
+ spark.buffer.pageSize 1m
+ spark.reducer.maxSizeInFlight 18m
+ 
+ spark.driver.maxResultSize 100m
+ spark.eventLog.compress true
+ spark.ui.retainedJobs 500
+ spark.ui.retainedStages 500
+ spark.worker.ui.retainedExecutors 100
+ spark.worker.ui.retainedDrivers 100
+ spark.sql.ui.retainedExecutions 100
+ spark.streaming.ui.retainedBatches 100
+ 
+ #spark.shuffle.spill.numElementsForceSpillThreshold 10000
+ 
+ spark.history.provider org.apache.spark.deploy.yarn.history.YarnHistoryProvider 
+ spark.history.ui.port 18080
+ spark.yarn.containerLauncherMaxThreads 25
+ spark.yarn.services org.apache.spark.deploy.yarn.history.YarnHistoryService
+ spark.yarn.preserve.staging.files false
+ 
+ 
+ 
+ spark.sql.planner.sortMergeJoin=true
+ spark.sql.autoBroadcastJoinThreshold -1
+ 
+ 
+ 
+ 
+  
+ spark.rpc.numRetries 9
+ spark.task.maxFailures 8
+ spark.executor.heartbeatInterval 20s
+ spark.akka.timeout 1200s
+ spark.rpc.askTimeout 1200s
+ spark.rpc.lookupTimeout 1200s
+ spark.rpc.retry.wait 12s
+ spark.network.timeout 300s
+ spark.akka.threads 8
+ spark.files.fetchTimeout 300s
+ spark.worker.timeout 300s
+ spark.storage.blockManagerTimeoutIntervalMs 120s
+ 
+ spark.sql.shuffle.partitions 32
+
+
+
+</value>
+  </property>
+</configuration>

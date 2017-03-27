@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+<property>
+   <name>a1_executor_count</name>
+   <value>1</value>
+   <description>ydb process count</description>
+ </property>
+  <property>
+    <name>a2_executor_mem</name>
+    <value>2000m</value>
+    <description>each ydb process memory  </description>
+  </property>
+  <property>
+    <name>a3_executor_cores</name>
+    <value>7</value>
+    <description>each process threads count</description>
+  </property>
+  
+  <property>
+    <name>a4_driver_memory</name>
+    <value>2000m</value>
+    <description>jdbc server memory</description>
+  </property>
+  
+   <property>
+    <name>a5_zookeeper_list</name>
+    <value>ydbmaster</value>
+    <description>zookeepr list ,such as ydbslave01,ydbslave02,ydbslave03</description>
+  </property>
+   <property>
+    <name>a6_zookeeper_port</name>
+    <value>2181</value>
+    <description>ydb_zookeeper_port</description>
+  </property>
+  
+     <property>
+    <name>a7_driver_port</name>
+    <value>10009</value>
+    <description>jdbc server port</description>
+  </property>
+  
+     <property>
+    <name>a8_ydbui_port</name>
+    <value>1210</value>
+    <description>ydb ui port</description>
+  </property>
+  
+  <property>
+    <name>a9_sparkui_port</name>
+    <value>10523</value>
+    <description>spark ui port</description>
+  </property>
+  
+  
+  
+
+  <property>
+    <name>b1_spark_home</name>
+    <value>/opt/ydbsoftware/spark</value>
+    <description>spark_for_ydb_path</description>
+  </property>
+     <property>
+    <name>b2_java_home</name>
+    <value>/opt/ydbsoftware/jdk1.8.0_60</value>
+    <description>java home</description>
+  </property>
+  <property>
+    <name>b3_hdfs_user</name>
+    <value>hdfs</value>
+    <description>hdfs user</description>
+  </property>
+  
+   <property>
+    <name>b4_hadoop_conf</name>
+    <value>/etc/hadoop/conf</value>
+    <description>hadoop conf dir</description>
+  </property>
+  
+   <property>
+    <name>b5_hadoop_home</name>
+    <value>/usr/crh/current/hadoop-client</value>
+    <description>hadoop home dir</description>
+  </property>
+  
+
+  
+    <property>
+    <name>c1_hive_warehouse</name>
+    <value>/user/hive/warehouse</value>
+    <description>hive warehouse path</description>
+  </property>
+  
+  <property>
+    <name>c2_ydb_path</name>
+    <value>/data/ycloud/ydb</value>
+    <description>spark_for_ydb_path</description>
+  </property>
+  
+       <property>
+    <name>c3_metastore</name>
+    <value>/opt/ydbsoftware/metastore</value>
+    <description>like ydbslave01:6667,ydbslave02:6667,ydbslave03:6667</description>
+  </property>
+ 
+  
+    <property>
+    <name>d1_reader_list</name>
+    <value>default,filesplit</value>
+    <description>if used kafka ,please set to  default,filesplit,kafka_json</description>
+  </property>
+  
+      <property>
+    <name>d2_kafka_topic</name>
+    <value>kafka02</value>
+    <description>kafka topic</description>
+  </property>
+  
+        <property>
+    <name>d3_kafka_group</name>
+    <value>kafka02_group</value>
+    <description>kafka group</description>
+  </property>
+  
+   <property>
+    <name>d4_kafka_server</name>
+    <value>ydbslave01:6667,ydbslave02:6667,ydbslave03:6667</value>
+    <description>like ydbslave01:6667,ydbslave02:6667,ydbslave03:6667</description>
+  </property>
+  
+  
+   <property>
+    <name>d5_kafka_reader</name>
+    <value>cn.net.ycloud.ydb.server.reader.kafka.KafkaDataReader</value>
+    <description>kafka reader class  default is cn.net.ycloud.ydb.server.reader.kafka.KafkaDataReader</description>
+  </property>
+  
+  
+  <property>
+    <name>d6_kafka_parser</name>
+    <value>cn.net.ycloud.ydb.server.reader.JsonParser</value>
+    <description>kafka data parser class  default is cn.net.ycloud.ydb.server.reader.JsonParser</description>
+  </property>
+  
+
+
+</configuration>
